@@ -1,0 +1,42 @@
+---
+name: eplant_service
+description: Multi-point passthrough adaptor for BAR ePlant web services.
+version: 0.1
+icon: BAR.png
+tag:
+	- 'eplant'
+	- 'arabidopsis'
+	- 'expression'
+
+authors:
+	- name: Asher Pasha
+	  email: asher.pasha@utoronto.ca
+	  sponsor_orgainzation: University of Toronto
+	  sponsor_uri: http://www.utoronto.ca/
+
+type: passthrough
+url: http://bar.utoronto.ca/eplant/cgi-bin
+whitelist:
+	- bar.utoronto.ca
+
+endpoints:
+	/speciesinfo.cgi
+		description: Return a JSON list of species
+	/chromosomeinfo.cgi
+		description: Return chromosome information given a species
+		parameters:
+			- name: species
+			  descirption: Species Name
+			  type: string
+			  required: true
+			  default: Arabidopsis_thaliana
+
+sources:
+	- title: BAR ePlant
+	  description: ePlant project
+	  language: en-ca
+	  sponsor_organization_name: University of Toronto
+	  sponsor_uri: http://www.utoronto.ca/
+	  provider_name: Nicholas Provart
+	  provider_email: nicholas.provart@utoronto.ca
+	  uri: http://bar.utoronto.ca/eplant 
