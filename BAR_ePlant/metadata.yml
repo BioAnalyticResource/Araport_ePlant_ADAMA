@@ -1,6 +1,6 @@
 ---
 name: eplant_service
-description: Multi-point passthrough adaptor for BAR ePlant web services.
+description: Multi-point pass-through adaptor for BAR ePlant web services.
 version: 0.1
 icon: BAR.png
 tag:
@@ -11,7 +11,7 @@ tag:
 authors:
     - name: Asher Pasha
       email: asher.pasha@utoronto.ca
-      sponsor_orgainzation: University of Toronto
+      sponsor_organization: University of Toronto
       sponsor_uri: http://www.utoronto.ca/
 
 type: passthrough
@@ -26,7 +26,7 @@ endpoints:
         description: Return chromosome information given a species
         parameters:
             - name: species
-              descirption: Species Name
+              description: Species Name
               type: string
               required: true
               default: Arabidopsis_thaliana
