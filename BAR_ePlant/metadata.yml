@@ -1,7 +1,7 @@
 ---
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.1
+version: 0.2
 icon: BAR.png
 tag:
     - 'eplant'
@@ -43,6 +43,53 @@ endpoints:
               type: string
               required: true
               default: abi3
+    /idautocomplete.cgi:
+        description: Auto-complete feature for ePlant
+        parameters:
+            - name: species
+              description: Species Name
+              type: string
+              required: true
+              default: Arabidopsis_thaliana
+            - name: term
+              description: Gene name such as ABI3
+              type: string
+              required: true
+              default: abi3
+    /plantefp.cgi:
+        description: Get data from databases
+        parameters:
+            - name: datasource
+              description: Data source such as AtGenExpress
+              type: string
+              required: true
+            - name: samples
+              description: List of samples
+              type: URL encoded string (JSON)
+              required: true
+    /cellefp.cgi:
+        description: Get sub-cellular localizations
+        parameters:
+            - name: id
+              description: AGI id or locus
+              type: string
+              required: true
+              default: AT3G24650
+    /JSMol.cgi:
+        description: This gets the URL for Molecular Viewer
+        parameters:
+            - name: agi
+              description: AGI id or locus
+              type: string
+              required: true
+              default: AT3G24650
+    /groupsuba3.cgi:
+        description: Web service for SUBA3
+        parameters:
+            - name: id
+              description: URL encoded version of AGI id 
+              type: string
+              required: true
 
 sources:
     - title: BAR ePlant
