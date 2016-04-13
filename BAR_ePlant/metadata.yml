@@ -1,9 +1,10 @@
 ---
+
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
 version: 0.2
 icon: BAR.png
-tag:
+tags:
     - 'eplant'
     - 'arabidopsis'
     - 'expression'
@@ -20,9 +21,9 @@ whitelist:
     - bar.utoronto.ca
 
 endpoints:
-    /speciesinfo.cgi:
+    /access/speciesinfo.cgi:
         description: Return a JSON list of species
-    /chromosomeinfo.cgi:
+    /access/chromosomeinfo.cgi:
         description: Return chromosome information given a species
         parameters:
             - name: species
@@ -30,7 +31,7 @@ endpoints:
               type: string
               required: true
               default: Arabidopsis_thaliana
-    /querygene.cgi:
+    /access/querygene.cgi:
         description: Query a gene
         parameters:
             - name: species
@@ -43,7 +44,7 @@ endpoints:
               type: string
               required: true
               default: abi3
-    /idautocomplete.cgi:
+    /access/idautocomplete.cgi:
         description: Auto-complete feature for ePlant
         parameters:
             - name: species
@@ -56,7 +57,7 @@ endpoints:
               type: string
               required: true
               default: abi3
-    /plantefp.cgi:
+    /access/plantefp.cgi:
         description: Get data from databases
         parameters:
             - name: datasource
@@ -67,7 +68,7 @@ endpoints:
               description: List of samples
               type: URL encoded string (JSON)
               required: true
-    /cellefp.cgi:
+    /access/cellefp.cgi:
         description: Get sub-cellular localizations
         parameters:
             - name: id
@@ -75,7 +76,7 @@ endpoints:
               type: string
               required: true
               default: AT3G24650
-    /JSMol.cgi:
+    /access/JSMol.cgi:
         description: This gets the URL for Molecular Viewer
         parameters:
             - name: agi
@@ -83,7 +84,7 @@ endpoints:
               type: string
               required: true
               default: AT3G24650
-    /groupsuba3.cgi:
+    /access/groupsuba3.cgi:
         description: Web service for SUBA3
         parameters:
             - name: id
@@ -99,4 +100,4 @@ sources:
       sponsor_uri: http://www.utoronto.ca/
       provider_name: Nicholas Provart
       provider_email: nicholas.provart@utoronto.ca
-      uri: http://bar.utoronto.ca/eplant 
+      uri: http://bar.utoronto.ca/eplant
