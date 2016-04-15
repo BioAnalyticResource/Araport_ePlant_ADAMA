@@ -2,7 +2,7 @@
 
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.1
+version: 0.2
 icon: BAR.png
 tags:
     - 'eplant'
@@ -10,7 +10,7 @@ tags:
     - 'expression'
 
 authors:
-    - name: Asher Pasha
+    - name: Asher Pasha, Erik Ferlanti
       email: asher.pasha@utoronto.ca
       sponsor_organization: University of Toronto
       sponsor_uri: http://www.utoronto.ca/
@@ -22,31 +22,75 @@ whitelist:
 
 endpoints:
     /access/speciesinfo.cgi:
-        get:
-            description: Return a JSON list of species
+        description: Return a JSON list of species
     /access/chromosomeinfo.cgi:
-        get:
-            description: Return chromosome information given a species
-            parameters:
-                - name: species
-                  description: Species Name
-                  type: string
-                  required: true
-                  default: Arabidopsis_thaliana
+        description: Return chromosome information given a species
+        parameters:
+            - name: species
+              description: Species Name
+              type: string
+              required: true
+              default: Arabidopsis_thaliana
     /access/querygene.cgi:
-        get:
-            description: Query a gene
-            parameters:
-                - name: species
-                  description: Species Name
-                  type: string
-                  required: true
-                  default: Arabidopsis_thaliana
-                - name: term
-                  description: Gene name such as ABI3
-                  type: string
-                  required: true
-                  default: abi3
+        description: Query a gene
+        parameters:
+            - name: species
+              description: Species Name
+              type: string
+              required: true
+              default: Arabidopsis_thaliana
+            - name: term
+              description: Gene name such as ABI3
+              type: string
+              required: true
+              default: abi3
+    /access/idautocomplete.cgi:
+        description: Auto-complete feature for ePlant
+        parameters:
+            - name: species
+              description: Species Name
+              type: string
+              required: true
+              default: Arabidopsis_thaliana
+            - name: term
+              description: Gene name such as ABI3
+              type: string
+              required: true
+              default: abi3
+    /access/plantefp.cgi:
+        description: Get data from databases
+        parameters:
+            - name: datasource
+              description: Data source such as AtGenExpress
+              type: string
+              required: true
+            - name: samples
+              description: List of samples
+              type: URL encoded string (JSON)
+              required: true
+    /access/cellefp.cgi:
+        description: Get sub-cellular localizations
+        parameters:
+            - name: id
+              description: AGI id or locus
+              type: string
+              required: true
+              default: AT3G24650
+    /access/JSMol.cgi:
+        description: This gets the URL for Molecular Viewer
+        parameters:
+            - name: agi
+              description: AGI id or locus
+              type: string
+              required: true
+              default: AT3G24650
+    /access/groupsuba3.cgi:
+        description: Web service for SUBA3
+        parameters:
+            - name: id
+              description: URL encoded version of AGI id 
+              type: string
+              required: true
 
 sources:
     - title: BAR ePlant
