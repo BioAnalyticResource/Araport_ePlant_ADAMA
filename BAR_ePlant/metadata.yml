@@ -2,7 +2,7 @@
 
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.2
+version: 0.3
 icon: BAR.png
 tags:
     - 'eplant'
@@ -10,10 +10,14 @@ tags:
     - 'expression'
 
 authors:
-    - name: Asher Pasha, Erik Ferlanti
+    - name: Asher Pasha
       email: asher.pasha@utoronto.ca
       sponsor_organization: University of Toronto
       sponsor_uri: http://www.utoronto.ca/
+    - name: Erik Ferlanti
+      email: erik@jcvi.org
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
 
 type: passthrough
 url: http://bar.utoronto.ca/eplant/cgi-bin
@@ -22,75 +26,107 @@ whitelist:
 
 endpoints:
     /access/speciesinfo.cgi:
-        description: Return a JSON list of species
+        get:
+            description: Return a JSON list of species
     /access/chromosomeinfo.cgi:
-        description: Return chromosome information given a species
-        parameters:
-            - name: species
-              description: Species Name
-              type: string
-              required: true
-              default: Arabidopsis_thaliana
+        get:
+            description: Return chromosome information given a species
+            parameters:
+                - name: species
+                  description: Species Name
+                  type: string
+                  required: true
+                  default: Arabidopsis_thaliana
     /access/querygene.cgi:
-        description: Query a gene
-        parameters:
-            - name: species
-              description: Species Name
-              type: string
-              required: true
-              default: Arabidopsis_thaliana
-            - name: term
-              description: Gene name such as ABI3
-              type: string
-              required: true
-              default: abi3
+        get:
+            description: Query a gene
+            parameters:
+                - name: species
+                  description: Species Name
+                  type: string
+                  required: true
+                  default: Arabidopsis_thaliana
+                - name: term
+                  description: Gene name such as ABI3
+                  type: string
+                  required: true
+                  default: abi3
     /access/idautocomplete.cgi:
-        description: Auto-complete feature for ePlant
-        parameters:
-            - name: species
-              description: Species Name
-              type: string
-              required: true
-              default: Arabidopsis_thaliana
-            - name: term
-              description: Gene name such as ABI3
-              type: string
-              required: true
-              default: abi3
+        get:
+            description: Auto-complete feature for ePlant
+            parameters:
+                - name: species
+                  description: Species Name
+                  type: string
+                  required: true
+                  default: Arabidopsis_thaliana
+                - name: term
+                  description: Gene name such as ABI3
+                  type: string
+                  required: true
+                  default: abi3
     /access/plantefp.cgi:
-        description: Get data from databases
-        parameters:
-            - name: datasource
-              description: Data source such as AtGenExpress
-              type: string
-              required: true
-            - name: samples
-              description: List of samples
-              type: URL encoded string (JSON)
-              required: true
+        get:
+            description: Get data from databases
+            parameters:
+                - name: datasource
+                  description: Data source such as AtGenExpress
+                  type: string
+                  required: true
+                - name: samples
+                  description: List of samples
+                  type: URL encoded string (JSON)
+                  required: true
     /access/cellefp.cgi:
-        description: Get sub-cellular localizations
-        parameters:
-            - name: id
-              description: AGI id or locus
-              type: string
-              required: true
-              default: AT3G24650
+        get:
+            description: Get sub-cellular localizations
+            parameters:
+                - name: id
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650
     /access/JSMol.cgi:
-        description: This gets the URL for Molecular Viewer
-        parameters:
-            - name: agi
-              description: AGI id or locus
-              type: string
-              required: true
-              default: AT3G24650
+        get:
+            description: This gets the URL for Molecular Viewer
+            parameters:
+                - name: agi
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650
     /access/groupsuba3.cgi:
-        description: Web service for SUBA3
-        parameters:
-            - name: id
-              description: URL encoded version of AGI id 
-              type: string
-              required: true
+        get:
+            description: Web service for SUBA3
+            parameters:
+                - name: id
+                  description: URL encoded version of AGI id
+                  type: string
+                  required: true
+    /access/genedensity.cgi:
+        get:
+            description: Returns gene density for chromosome view
+            parameters:
+                - name: species
+                  description: Species Name
+                  type: string
+                  required: true
+                  default: Arabidopsis_thaliana
+                - name: binSize
+                  description: bin size
+                  type: number
+                  format: double
+                  required: true
+                  default: 41588.68787689747
+    /access/citation.cgi:
+        get:
+            description: Returns citation for views
+            parameters:
+                - name: view
+                  description: View
+                  type: string
+                  required: true
+                  default: Tissue Specific Embryo Development eFP
 
 sources:
     - title: BAR ePlant
