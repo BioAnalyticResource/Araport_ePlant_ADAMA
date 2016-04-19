@@ -20,7 +20,7 @@ authors:
       sponsor_uri: http://www.jcvi.org
 
 type: passthrough
-url: https://bar.utoronto.ca/ntools/cgi-bin/
+url: http://bar.utoronto.ca/ntools/cgi-bin/
 whitelist:
     - bar.utoronto.ca
 
