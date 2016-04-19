@@ -1,0 +1,37 @@
+---
+
+name: expression_angler_service
+description: Multi-point pass-through adaptor for BAR Expression Angler web services.
+version: 0.1
+icon: BAR.png
+tags:
+    - 'Expression Angler'
+    - 'arabidopsis'
+    - 'expression'
+
+authors:
+    - name: Asher Pasha
+      email: asher.pasha@utoronto.ca
+      sponsor_organization: University of Toronto
+      sponsor_uri: http://www.utoronto.ca/
+    - name: Erik Ferlanti
+      email: erik@jcvi.org
+      sponsor_organization: JCVI
+      sponsor_uri: http://www.jcvi.org
+
+type: passthrough
+url: https://bar.utoronto.ca/ntools/cgi-bin/
+whitelist:
+    - bar.utoronto.ca
+
+endpoints:
+
+sources:
+    - title: BAR Expression Angler
+      description: Expression Angler and ePlant projects
+      language: en-ca
+      sponsor_organization_name: University of Toronto
+      sponsor_uri: http://www.utoronto.ca/
+      provider_name: Nicholas Provart
+      provider_email: nicholas.provart@utoronto.ca
+      uri: http://bar.utoronto.ca/ExpressionAngler
