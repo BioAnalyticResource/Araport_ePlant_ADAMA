@@ -25,6 +25,67 @@ whitelist:
     - bar.utoronto.ca
 
 endpoints:
+    /access/get_alias.pl:
+        get:
+            description: Returns locus and alias for a given term
+            parameters:
+                - name: term
+                  description: Term
+                  type: string
+                  required: true
+                  default: abi3
+    /access/check_alias.pl:
+        get:
+            description: Check if locus exists in BAR databases
+            produces:
+                - text/html
+            parameters:
+                - name: gene
+                  description: Gene
+                  type: string
+                  required: true
+                  default: At3g24650
+    /access/ntools_expression_angler.cgi:
+        post:
+            description: Runs BAR Expression Angler
+            produces:
+                - text/html
+            parameters:
+                - name: agi_id
+                  description: AGI locus identifier
+                  type: string
+                  required: true
+                  default: At3g24650
+                - name: match_count
+                  description: Match count
+                  type: string
+                  required: true
+                  default: 5undefined
+                - name: database
+                  description: Database
+                  type: string
+                  required: true
+                  default: AtGenExpress_Tissue_Plus_raw
+        get:
+            description: Runs BAR Expression Angler
+            produces:
+                - text/html
+            parameters:
+                - name: agi_id
+                  description: AGI locus identifier
+                  type: string
+                  required: true
+                  default: At3g24650
+                - name: match_count
+                  description: Match count
+                  type: string
+                  required: true
+                  default: 5undefined
+                - name: database
+                  description: Database
+                  type: string
+                  required: true
+                  default: AtGenExpress_Tissue_Plus_raw
 
 sources:
     - title: BAR Expression Angler
