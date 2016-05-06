@@ -2,7 +2,7 @@
 
 name: expression_angler_service
 description: Multi-point pass-through adaptor for BAR Expression Angler web services.
-version: 0.1
+version: 0.2
 icon: BAR.png
 tags:
     - 'Expression Angler'
@@ -86,6 +86,16 @@ endpoints:
                   type: string
                   required: true
                   default: AtGenExpress_Tissue_Plus_raw
+    /access/getData.php:
+        get:
+            description: Return output from Expression Angler
+            produces:
+                - text/html
+            parameters:
+                - name: id
+                  description: Id of Expression Angler output file
+                  type: integer
+                  required: true
 
 sources:
     - title: BAR Expression Angler
