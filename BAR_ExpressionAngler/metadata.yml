@@ -90,7 +90,7 @@ endpoints:
         get:
             description: Return output from Expression Angler
             produces:
-                - text/html
+                - text/plain
             parameters:
                 - name: id
                   description: Id of Expression Angler output file
