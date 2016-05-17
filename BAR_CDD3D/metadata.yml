@@ -1,0 +1,65 @@
+---
+
+name: CDD3D_service
+description: Multi-point pass-through adaptor for BAR CDD3D web services.
+version: 0.1
+icon: BAR.png
+tags:
+    - 'eplant'
+    - 'arabidopsis'
+    - 'CDD3D'
+
+authors:
+    - name: Asher Pasha
+      email: asher.pasha@utoronto.ca
+      sponsor_organization: University of Toronto
+      sponsor_uri: http://www.utoronto.ca/
+
+type: passthrough
+url: http://bar.utoronto.ca/CDD3D/cgi-bin
+whitelist:
+    - bar.utoronto.ca
+
+endpoints:
+    /access/PfamAnnot.cgi:
+        post:
+            description: Returns Pfam annotations
+            produces:
+                - text/html
+            parameters:
+                - name: FASTAseq
+                  description: FASTA sequence
+                  type: string
+                  required: true
+                  default: KNLRFLLQKVLKQSDVGNLGRIVLPKKEAETHLPELEARDGISLAMEDIGTSRVWNMRYRFWPNNKSRMYLLENTGDFVKTNGLQEGDFIVIYSDVKCGKYLIRGVKVRQPSGQKP
+                - name: url
+                  description: BAR URL
+                  type: string
+                  required: true
+                  default: https://bar.utoronto.ca/CDD3D/cgi-bin/PfamAnnot.cgi
+    /access/CDDannot.cgi:
+        post:
+            description: Returns CDD annotations
+            produces:
+                -text/html
+            parameters:
+                - name: FASTAseq
+                  description: FASTA sequence
+                  type: string
+                  required: true
+                  default: KNLRFLLQKVLKQSDVGNLGRIVLPKKEAETHLPELEARDGISLAMEDIGTSRVWNMRYRFWPNNKSRMYLLENTGDFVKTNGLQEGDFIVIYSDVKCGKYLIRGVKVRQPSGQKP
+                - name: url
+                  description: BAR URL
+                  type: string
+                  required: true
+                  default: https://bar.utoronto.ca/CDD3D/cgi-bin/CDDAnnot.cgi
+
+sources:
+    - title: BAR ePlant
+      description: ePlant project
+      language: en-ca
+      sponsor_organization_name: University of Toronto
+      sponsor_uri: http://www.utoronto.ca/
+      provider_name: Nicholas Provart
+      provider_email: nicholas.provart@utoronto.ca
+      uri: http://bar.utoronto.ca/eplant
