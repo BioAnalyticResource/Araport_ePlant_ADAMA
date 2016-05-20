@@ -1,6 +1,6 @@
 ---
 
-name: CDD3D_service
+name: cdd3d_service
 description: Multi-point pass-through adaptor for BAR CDD3D web services.
 version: 0.1
 icon: BAR.png
