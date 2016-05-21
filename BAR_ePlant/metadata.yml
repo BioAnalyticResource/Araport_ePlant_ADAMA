@@ -2,7 +2,7 @@
 
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.3
+version: 0.4
 icon: BAR.png
 tags:
     - 'eplant'
@@ -127,6 +127,19 @@ endpoints:
                   type: string
                   required: true
                   default: Tissue Specific Embryo Development eFP
+    /access/worldefp.cgi:
+        get:
+            description: Returns data for different ecotypes
+            parameters:
+                - name: id
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650
+                - name: samples
+                  description: samples
+                  type: string
+                  required: true
 
 sources:
     - title: BAR ePlant
