@@ -140,6 +140,15 @@ endpoints:
                   description: samples
                   type: string
                   required: true
+    /access/get_rank.php:
+        get:
+            description: Returns Expression Rank
+            parameters:
+                - name: expression
+                  description: Expression Value
+                  type: integer
+                  required: true
+                  default: 0
 
 sources:
     - title: BAR ePlant
