@@ -88,7 +88,17 @@ endpoints:
                   default: AtGenExpress_Tissue_Plus_raw
     /access/getData.php:
         get:
-            description: Return output from Expression Angler
+            description: Returns output from Expression Angler
+            produces:
+                - text/plain
+            parameters:
+                - name: id
+                  description: Id of Expression Angler output file
+                  type: integer
+                  required: true
+    /access/getHistogram.php:
+        get:
+            description: Returns histogram data from Expression Angler
             produces:
                 - text/plain
             parameters:
