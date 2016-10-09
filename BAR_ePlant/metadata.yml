@@ -149,6 +149,30 @@ endpoints:
                   type: integer
                   required: true
                   default: 0
+    /access/get_trp_data.php:
+        get:
+            description: Returns TRP binding data
+            parameters:
+                - name: locus
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650
+    /access/get_snp_data.php:
+        get:
+            description: Returns SNP data
+            parameters:
+                - name: agi
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650.1
+            parameters:
+                - name: service
+                  description: Name of service requested
+                  type: string
+                  required: true
+                  default: nssnps
 
 sources:
     - title: BAR ePlant
