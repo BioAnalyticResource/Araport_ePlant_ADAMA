@@ -41,7 +41,7 @@ endpoints:
         post:
             description: Returns CDD annotations
             produces:
-                -text/html
+                - text/html
             parameters:
                 - name: FASTAseq
                   description: FASTA sequence

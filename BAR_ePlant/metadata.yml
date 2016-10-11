@@ -173,7 +173,18 @@ endpoints:
                   type: string
                   required: true
                   default: nssnps
-
+    /access/get_phyre2_data.php:
+        get:
+            description: Returns PHYRE2 data
+            produces:
+                - text/html
+            parameters:
+                - name: agi
+                  description: AGI id or locus
+                  type: string
+                  required: true
+                  default: AT3G24650.1
+ 
 sources:
     - title: BAR ePlant
       description: ePlant project
