@@ -173,17 +173,17 @@ endpoints:
                   type: string
                   required: true
                   default: nssnps
-    /access/get_phyre2_data.php:
+    /access/getPhyre2Data.php:
         get:
-            description: Returns PHYRE2 data
+            description: Returns Phyre2 data
             produces:
                 - text/html
             parameters:
-                - name: agi
-                  description: AGI id or locus
+                - name: file
+                  description: Filename of Phyre2 file
                   type: string
                   required: true
-                  default: AT3G24650.1
+                  default: Phyre2_AT1G01010.1.pdb
  
 sources:
     - title: BAR ePlant
