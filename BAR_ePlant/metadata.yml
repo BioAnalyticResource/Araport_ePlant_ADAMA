@@ -184,11 +184,11 @@ endpoints:
                   type: string
                   required: true
                   default: Phyre2_AT1G01010.1.pdb
-    /access/gene_cloud.php:
+    /access/gene_cloud_base64.php:
         get:
             description: Returns Gene Cloud. Note that multiple genes are requried.
             produces: 
-                - image/png
+                - text/html
             parameters:
                 - name: gene
                   description: AGI id or locus
