@@ -195,6 +195,24 @@ endpoints:
                   type: string
                   required: true
                   default: AT3G24650
+    /access/CDDannot.cgi:
+        post:
+            description: Returns CDD Annotations
+            parameters:
+                - name: FASTAseq
+                  description: FASTA sequence of protein
+                  type: string
+                  required: true
+                  default: KNLRFLLQKVLKQSDVGNLGRIVLPKKEAETHLPELEARDGISLAMEDIGTSRVWNMRYRFWPNNKSRMYLLENTGDFVKTNGLQEGDFIVIYSDVKCGKYLIRGVKVRQPSGQKP
+    /access/PfamAnnot.cgi:
+        post:
+            description: Returns Pfam Annotations
+            parameters:
+                - name: FASTAseq
+                  description: FASTA sequence of protein
+                  type: string
+                  required: true
+                  default: KNLRFLLQKVLKQSDVGNLGRIVLPKKEAETHLPELEARDGISLAMEDIGTSRVWNMRYRFWPNNKSRMYLLENTGDFVKTNGLQEGDFIVIYSDVKCGKYLIRGVKVRQPSGQKP
  
 sources:
     - title: BAR ePlant
