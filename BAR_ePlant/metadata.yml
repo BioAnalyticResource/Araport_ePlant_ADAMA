@@ -186,15 +186,15 @@ endpoints:
                   default: Phyre2_AT1G01010.1.pdb
     /access/gene_cloud_base64.php:
         get:
-            description: Returns Gene Cloud. Note that multiple genes are requried.
+            description: Returns Base64 encoded URL of Gene Cloud. Note that multiple genes are requried.
             produces: 
                 - text/html
             parameters:
-                - name: gene
-                  description: AGI id or locus
+                - name: genes
+                  description: AGIs separted by underscore
                   type: string
                   required: true
-                  default: AT3G24650
+                  default: At1g59840_At2g07727_At2g26500_At3g26710_At3g57190
     /access/CDDannot.cgi:
         post:
             description: Returns CDD Annotations
