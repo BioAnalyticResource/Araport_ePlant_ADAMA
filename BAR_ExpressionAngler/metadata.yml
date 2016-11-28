@@ -2,12 +2,13 @@
 
 name: expression_angler_service
 description: Multi-point pass-through adaptor for BAR Expression Angler web services.
-version: 0.2
+version: 0.3
 icon: BAR.png
 tags:
     - 'Expression Angler'
-    - 'arabidopsis'
-    - 'expression'
+    - 'Arabidopsis'
+    - 'Expression'
+    - 'BAR'
 
 authors:
     - name: Asher Pasha

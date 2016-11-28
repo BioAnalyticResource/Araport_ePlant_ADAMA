@@ -2,12 +2,13 @@
 
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.4
+version: 0.5
 icon: BAR.png
 tags:
-    - 'eplant'
-    - 'arabidopsis'
-    - 'expression'
+    - 'ePlant'
+    - 'Arabidopsis'
+    - 'Expression'
+    - 'BAR'
 
 authors:
     - name: Asher Pasha
