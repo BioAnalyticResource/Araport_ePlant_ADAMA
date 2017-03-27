@@ -2,7 +2,7 @@
 
 name: expression_angler_service
 description: Multi-point pass-through adaptor for BAR Expression Angler web services.
-version: 0.3
+version: 0.4
 icon: BAR.png
 tags:
     - 'Expression Angler'
@@ -46,47 +46,16 @@ endpoints:
                   type: string
                   required: true
                   default: At3g24650
-    /access/ntools_expression_angler.cgi:
+    /access/expression_angler_caller.php:
         post:
             description: Runs BAR Expression Angler
             produces:
                 - text/html
             parameters:
-                - name: agi_id
-                  description: AGI locus identifier
+                - name: request
+                  description: request JSON object with Expression Angler URL
                   type: string
                   required: true
-                  default: At3g24650
-                - name: match_count
-                  description: Match count
-                  type: string
-                  required: true
-                  default: 5undefined
-                - name: database
-                  description: Database
-                  type: string
-                  required: true
-                  default: AtGenExpress_Tissue_Plus_raw
-        get:
-            description: Runs BAR Expression Angler
-            produces:
-                - text/html
-            parameters:
-                - name: agi_id
-                  description: AGI locus identifier
-                  type: string
-                  required: true
-                  default: At3g24650
-                - name: match_count
-                  description: Match count
-                  type: string
-                  required: true
-                  default: 5undefined
-                - name: database
-                  description: Database
-                  type: string
-                  required: true
-                  default: AtGenExpress_Tissue_Plus_raw
     /access/getData.php:
         get:
             description: Returns output from Expression Angler
