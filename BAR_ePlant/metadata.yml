@@ -2,7 +2,7 @@
 
 name: eplant_service
 description: Multi-point pass-through adaptor for BAR ePlant web services.
-version: 0.5
+version: 0.6
 icon: BAR.png
 tags:
     - 'ePlant'
@@ -87,6 +87,10 @@ endpoints:
                   type: string
                   required: true
                   default: AT3G24650
+                - name: include_predicted
+                  description: Include predicted localisations
+                  type: string
+                  default: true
     /access/JSMol.cgi:
         get:
             description: This gets the URL for Molecular Viewer
@@ -104,6 +108,11 @@ endpoints:
                   description: URL encoded version of AGI id
                   type: string
                   required: true
+                - name: include_predicted
+                  description: Include predicted localisations
+                  type: string
+                  default: true
+  
     /access/genedensity.cgi:
         get:
             description: Returns gene density for chromosome view
@@ -150,6 +159,15 @@ endpoints:
                   type: integer
                   required: true
                   default: 0
+    /access/get_interactions.php:
+        get:
+            description: Returns Interactions
+            parameters:
+                - name: request
+                  description: List of IDs
+                  type: JSON
+                  required: true
+                  default: [{"agi":"AT3G24650"}]
     /access/get_trp_data.php:
         get:
             description: Returns TRP binding data
@@ -168,7 +186,6 @@ endpoints:
                   type: string
                   required: true
                   default: AT3G24650.1
-            parameters:
                 - name: service
                   description: Name of service requested
                   type: string
