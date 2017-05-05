@@ -159,6 +159,15 @@ endpoints:
                   type: integer
                   required: true
                   default: 0
+    /access/get_interactions_dapseq.php:
+        get:
+            description: Returns Interactions
+            parameters:
+                - name: request
+                  description: List of IDs
+                  type: JSON
+                  required: true
+                  default: [{"agi":"AT3G24650"}]
     /access/get_interactions.php:
         get:
             description: Returns Interactions
